@@ -11,25 +11,32 @@ namespace musicServiceApi.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        private String albumId;
+        private string albumId;
 
         [BsonElement("AlbumName")]
         [BsonRequired]
-        private String albumName { get; set; }
+        private string albumName { get; set; }
 
         [BsonElement("AlbumRelease")]
         [BsonRequired]
-        private String albumRelease { get; set; }
+        private string albumRelease { get; set; }
 
         [BsonElement("AlbumArtists")]
         [BsonRequired]
-        private List<String> albumArtists { get; set; }
+        private List<string> albumArtists { get; set; }
+
+        [BsonElement("SongsInAlbum")]
+        [BsonRequired]
+        private List<Song> songsInAlbum { get; set; }
+
 
 
         public Album()
         {
             // empty constructor
         }
-      
+
+        public string AlbumId { get => albumId; set => albumId = value; }
+
     }
 }
